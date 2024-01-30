@@ -1,0 +1,27 @@
+
+<table class="mat-elevation-z8">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>DATA</th>
+            <th>VALOR</th>
+            <th>CATEGORIA</th>
+            <th>EDITAR</th>
+        </tr>
+    </thead>
+    <tbody>
+        @for(transacao of transacoes; track $index){
+            <tr class="example-button-row">
+                <td>{{transacao.id}}</td>
+                <td>{{transacao.data}}</td>
+                <td>{{transacao.preco}}</td>
+                <td>{{transacao.categoria}}</td>
+                <td>
+                    <button mat-raised-button color="primary" (click)="selecionar(transacao)">ALTERAR</button>
+                    <button mat-raised-button color="warn" (click)="apagarTransacao(transacao.id)">X</button>
+                </td>
+            </tr>
+        }
+        
+    </tbody>
+</table>
